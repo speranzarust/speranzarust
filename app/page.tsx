@@ -409,8 +409,8 @@ transition={{
             </button>
           </div>
         </div>
-      </div>
     ))}
+  </div>
 </motion.section>
 
 <motion.section
