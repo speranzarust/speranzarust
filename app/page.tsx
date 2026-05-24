@@ -206,6 +206,102 @@ export default function Home() {
     </div>
   </div>
 </section>
+<section id="store" className="mt-12">
+  <div className="mb-6 flex items-end justify-between">
+    <div>
+      <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
+        Premium Access
+      </div>
+
+      <h2 className="mt-2 text-4xl font-black">
+        Speranza Store
+      </h2>
+    </div>
+
+    <div className={`hidden rounded-2xl border px-5 py-3 text-sm font-bold backdrop-blur-xl md:block ${theme.panel}`}>
+      Secure In-Game Purchases
+    </div>
+  </div>
+
+  <div className="grid gap-5 lg:grid-cols-3">
+    {[
+      {
+        title: 'Legendary VIP',
+        price: '$14.99',
+        desc: 'Priority queue, exclusive kits, premium perks and VIP commands.',
+        color: 'from-orange-500 to-red-600',
+        glow: 'rgba(255,120,40,.35)',
+      },
+
+      {
+        title: 'Battle Pass',
+        price: '$9.99',
+        desc: 'Unlock seasonal rewards, missions and exclusive progression tiers.',
+        color: 'from-cyan-500 to-blue-600',
+        glow: 'rgba(0,180,255,.35)',
+      },
+
+      {
+        title: 'Gold Scrap Pack',
+        price: '$4.99',
+        desc: 'Instantly boost your economy and dominate the server faster.',
+        color: 'from-yellow-400 to-orange-500',
+        glow: 'rgba(255,200,40,.35)',
+      },
+    ].map((item) => (
+      <div
+        key={item.title}
+        className={`group relative overflow-hidden rounded-[2rem] border p-6 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 ${theme.panel}`}
+      >
+        <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-[0.08] transition duration-500 group-hover:opacity-[0.16]`} />
+
+        <div
+          className="absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl transition duration-500 group-hover:scale-125"
+          style={{ background: item.glow }}
+        />
+
+        <div className="relative">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-xs font-black uppercase tracking-[.25em] text-orange-500">
+                Premium Package
+              </div>
+
+              <h3 className="mt-3 text-3xl font-black">
+                {item.title}
+              </h3>
+            </div>
+
+            <div className={`rounded-2xl bg-gradient-to-br ${item.color} px-4 py-3 text-lg font-black text-white shadow-[0_0_30px_rgba(255,120,40,.25)]`}>
+              {item.price}
+            </div>
+          </div>
+
+          <p className={`mt-5 leading-8 ${theme.muted}`}>
+            {item.desc}
+          </p>
+
+          <div className="mt-8 flex items-center justify-between">
+            <div className="flex gap-2">
+              <div className="h-2 w-2 rounded-full bg-emerald-400" />
+              <div className="h-2 w-2 rounded-full bg-orange-400" />
+              <div className="h-2 w-2 rounded-full bg-cyan-400" />
+            </div>
+
+            <button className="group relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/5 px-6 py-3 text-sm font-bold text-white backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/30 hover:shadow-[0_0_30px_rgba(255,120,40,.22)]">
+              <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.18),transparent_42%,rgba(255,255,255,.05))] opacity-0 transition duration-300 group-hover:opacity-100" />
+
+              <span className="relative">
+                Purchase
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
         <section className="py-10">
           <div className="mb-6"><div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">Speranza Systems</div><h2 className="mt-2 text-4xl font-black">Legendary Features</h2></div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
