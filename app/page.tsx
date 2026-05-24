@@ -43,6 +43,11 @@ export default function Home() {
 const dashboardInView = useInView(dashboardRef, {
   amount: 0.35,
 })
+const storeRef = useRef(null)
+
+const storeInView = useInView(storeRef, {
+  amount: 0.25,
+})
   const theme = useMemo(() => ({
     page: isDay ? 'bg-[#f7f8fb] text-slate-950' : 'bg-[#030407] text-white',
     panel: isDay
@@ -252,8 +257,36 @@ transition={{
       </div>
     </div>
   </div>
-</motion.section>
-<section id="store" className="mt-12">
+<motion.section
+  ref={storeRef}
+  id="store"
+  className="mt-12"
+  initial={{
+    opacity: 0,
+    y: 100,
+    scale: 0.94,
+    filter: 'blur(20px)',
+  }}
+  animate={
+    storeInView
+      ? {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: 'blur(0px)',
+        }
+      : {
+          opacity: 0,
+          y: 80,
+          scale: 0.96,
+          filter: 'blur(18px)',
+        }
+  }
+  transition={{
+    duration: 0.9,
+    ease: 'easeOut',
+  }}
+>
   <div className="mb-6 flex items-end justify-between">
     <div>
       <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
@@ -379,7 +412,7 @@ transition={{
       </div>
     ))}
   </div>
-</section>
+</motion.section>
 
 <motion.section
   className="py-10"
