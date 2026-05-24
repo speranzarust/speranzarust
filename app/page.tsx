@@ -21,7 +21,7 @@ const features = [
   { title: 'Live Dashboard', desc: 'Track players, server health, wipes, events, and rankings.', icon: Activity },
 ]
 
-const revealUp = {
+const revealUp: any = {
   hidden: { opacity: 0, y: 60, filter: 'blur(14px)' },
 
   visible: {
