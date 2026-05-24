@@ -166,7 +166,14 @@ export default function Home() {
             </motion.div>
           )})}
         </section>
-<section id="dashboard" className="mt-10">
+<motion.section
+  id="dashboard"
+  className="mt-10"
+  variants={revealUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.2 }}
+>
   <div className="mb-6">
     <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
       Live Control Center
@@ -219,7 +226,7 @@ export default function Home() {
       </div>
     </div>
   </div>
-</section>
+</motion.section>
 <section id="store" className="mt-12">
   <div className="mb-6 flex items-end justify-between">
     <div>
