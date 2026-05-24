@@ -38,7 +38,7 @@ const revealUp = {
 export default function Home() {
   const [mode, setMode] = useState<'night' | 'day'>('night')
   const isDay = mode === 'day'
-
+  
   const theme = useMemo(() => ({
     page: isDay ? 'bg-[#f7f8fb] text-slate-950' : 'bg-[#030407] text-white',
     panel: isDay
@@ -47,7 +47,7 @@ export default function Home() {
     muted: isDay ? 'text-slate-600' : 'text-white/62',
     heroBg: isDay
       ? 'bg-[radial-gradient(circle_at_73%_38%,rgba(255,106,0,.20),transparent_33%),linear-gradient(90deg,rgba(255,255,255,.96)_0%,rgba(255,255,255,.70)_46%,rgba(255,255,255,.48)_100%)]'
-      : 'bg-[radial-gradient(circle_at_74%_38%,rgba(255,72,0,.38),transparent_34%),radial-gradient(circle_at_20%_30%,rgba(0,0,0,.88),transparent_44%),linear-gradient(90deg,#040507_0%,rgba(4,5,7,.88)_45%,rgba(4,5,7,.56)_100%)]'
+      : 'bg-[radial-gradient(circle_at_74%_38%,rgba(255,72,0,.38),transparent_34%),radial-gradient(circle_at_20%_30%,rgba(0,0,0,.88),transparent_44%),linear-gradient(90deg,#040507_0%,rgba(4,5,7,.88)_45%,rgba(4,5,7,.56)_100%)]',
   }), [isDay])
 
   return (
@@ -398,3 +398,8 @@ export default function Home() {
     })}
   </div>
 </motion.section>
+
+      </div>
+    </main>
+  )
+}
