@@ -55,9 +55,23 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={`hidden items-center gap-8 text-sm font-bold uppercase ${theme.muted} lg:flex`}>
-            <span className="text-orange-500">Home</span><span>Dashboard</span><span>Store</span><span>Seasons</span><span>Leaderboards</span><span>Discord</span>
-          </div>
+         <div className="hidden items-center gap-2 text-sm font-bold uppercase lg:flex">
+  {['Home', 'Dashboard', 'Store', 'Seasons', 'Leaderboards', 'Discord'].map((item) => (
+    <button
+      key={item}
+      className={`group relative overflow-hidden rounded-2xl border px-4 py-3 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 ${
+        item === 'Home'
+          ? 'border-orange-400/30 bg-orange-500/10 text-orange-500 shadow-[0_0_28px_rgba(255,120,40,.16)]'
+          : isDay
+            ? 'border-black/5 bg-white/45 text-slate-700 hover:text-orange-500'
+            : 'border-white/10 bg-white/5 text-white/80 hover:text-orange-400'
+      }`}
+    >
+      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.16),transparent_42%,rgba(255,255,255,.06))] opacity-0 transition duration-300 group-hover:opacity-100" />
+      <span className="relative">{item}</span>
+    </button>
+  ))}
+</div>
 
           <div className="flex items-center gap-3">
             <button onClick={() => setMode(isDay ? 'night' : 'day')} className={`flex h-12 items-center gap-2 rounded-2xl border px-4 text-sm font-black backdrop-blur-xl transition ${theme.panel}`}>
