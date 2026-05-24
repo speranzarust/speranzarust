@@ -34,7 +34,7 @@ const revealUp: any = {
       ease: 'easeOut',
     },
   },
-}
+};
 export default function Home() {
   const [mode, setMode] = useState<'night' | 'day'>('night')
   const isDay = mode === 'day'
@@ -414,7 +414,6 @@ transition={{
     ))}
   </div>
 </motion.section>
-
 <motion.section
   className="py-10"
   variants={revealUp}
