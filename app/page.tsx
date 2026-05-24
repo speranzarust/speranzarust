@@ -87,11 +87,26 @@ export default function Home() {
                 <p className={`mt-4 max-w-xl text-lg leading-8 ${theme.muted}`}>Speranza 10X PVE+ with Legendary Weapons, Gold Scrap, Bosses, Raidable Bases, and Legendary Armor.</p>
               </motion.div>
 
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <button className="group rounded-2xl border border-orange-400/50 bg-gradient-to-r from-orange-600 to-red-700 px-8 py-5 text-xl font-black text-white shadow-[0_0_45px_rgba(255,76,16,.35)] transition hover:-translate-y-1"><span className="inline-flex items-center gap-3"><Zap className="h-5 w-5" /> JOIN SERVER</span></button>
-                <button className={`rounded-2xl border px-8 py-5 text-lg font-black backdrop-blur-xl transition hover:-translate-y-1 ${theme.panel}`}>VIEW FEATURES</button>
-              </div>
+             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+  <button className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 px-8 py-5 text-xl font-bold text-white backdrop-blur-2xl shadow-[0_0_40px_rgba(255,120,40,.18)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/40 hover:bg-white/10 hover:shadow-[0_0_55px_rgba(255,120,40,.35)]">
+    
+    <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.22),transparent_40%,transparent_60%,rgba(255,255,255,.08))]" />
+    
+    <span className="relative inline-flex items-center gap-3">
+      <Zap className="h-5 w-5 text-orange-400" />
+      JOIN SERVER
+    </span>
+  </button>
 
+  <button className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 px-8 py-5 text-lg font-bold text-white backdrop-blur-2xl shadow-[0_0_30px_rgba(255,255,255,.06)] transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/10">
+    
+    <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.12),transparent_40%,transparent_60%,rgba(255,255,255,.05))]" />
+    
+    <span className="relative">
+      VIEW FEATURES
+    </span>
+  </button>
+</div>
               <div className={`mt-8 rounded-3xl border p-5 backdrop-blur-2xl ${theme.panel}`}>
                 <div className="mb-4 flex items-center gap-2 text-sm font-bold uppercase"><span className="h-2.5 w-2.5 rounded-full bg-emerald-500" /> Server Status: <span className="text-emerald-500">Online</span></div>
                 <div className="grid grid-cols-2 gap-4">
