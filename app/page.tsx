@@ -105,7 +105,7 @@ export default function Home() {
 
   <button className={`group relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.16)_0%,rgba(255,255,255,.03)_100%)] px-9 py-5 text-xl font-bold backdrop-blur-3xl shadow-[0_20px_60px_rgba(0,0,0,.45),inset_0_1px_1px_rgba(255,255,255,.22),0_0_35px_rgba(255,110,40,.18)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(255,120,40,.28),inset_0_1px_2px_rgba(255,255,255,.28)] ${isDay ? 'text-orange-500' : 'text-white'}`}>
 
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_leftrgba(255,255,255,.22),transparent_38%)]"></div>
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,.22),transparent_38%)]"></div>
 
     <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,.16),transparent)]"></div>
 
@@ -152,7 +152,60 @@ export default function Home() {
             </motion.div>
           )})}
         </section>
+<section id="dashboard" className="mt-10">
+  <div className="mb-6">
+    <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
+      Live Control Center
+    </div>
+    <h2 className="mt-2 text-4xl font-black">Server Dashboard</h2>
+  </div>
 
+  <div className="grid gap-5 xl:grid-cols-[1.2fr_.8fr]">
+    <div className={`rounded-[2rem] border p-6 backdrop-blur-2xl ${theme.panel}`}>
+      <div className="mb-6 flex items-center justify-between">
+        <div>
+          <h3 className="text-2xl font-black">Live Server Pulse</h3>
+          <p className={`mt-1 ${theme.muted}`}>Real-time overview of Speranza activity.</p>
+        </div>
+        <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm font-black text-emerald-500">
+          ONLINE
+        </div>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-3">
+        {[
+          ['CPU Load', '42%', 'Stable'],
+          ['Memory', '68%', 'Healthy'],
+          ['Ping', '38ms', 'Excellent'],
+        ].map(([label, value, status]) => (
+          <div key={label} className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+            <div className={`text-xs font-bold uppercase ${theme.muted}`}>{label}</div>
+            <div className="mt-3 text-4xl font-black text-orange-500">{value}</div>
+            <div className="mt-2 text-sm font-bold text-emerald-500">{status}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div className={`rounded-[2rem] border p-6 backdrop-blur-2xl ${theme.panel}`}>
+      <h3 className="text-2xl font-black">Top Activity</h3>
+
+      <div className="mt-5 space-y-4">
+        {[
+          ['Most Active Player', 'RagnarX', '12h 44m today'],
+          ['Top Clan', 'Phoenix Order', '18 members online'],
+          ['Current Event', 'World Boss', 'Live now'],
+        ].map(([title, value, sub]) => (
+          <div key={title} className="rounded-3xl border border-white/10 bg-white/5 p-4">
+            <div className={`text-xs font-bold uppercase ${theme.muted}`}>{title}</div>
+            <div className="mt-1 text-xl font-black">{value}</div>
+            <div className="text-sm font-bold text-orange-500">{sub}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
         <section className="py-10">
           <div className="mb-6"><div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">Speranza Systems</div><h2 className="mt-2 text-4xl font-black">Legendary Features</h2></div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
