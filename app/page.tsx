@@ -89,7 +89,7 @@ export default function Home() {
 
              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
-  <button className="group relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.16)_0%,rgba(255,255,255,.03)_100%)] px-9 py-5 text-xl font-bold text-white backdrop-blur-3xl shadow-[0_20px_60px_rgba(0,0,0,.45),inset_0_1px_1px_rgba(255,255,255,.22),0_0_35px_rgba(255,110,40,.18)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(255,120,40,.28),inset_0_1px_2px_rgba(255,255,255,.28)]">
+  <button className={`group relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.16)_0%,rgba(255,255,255,.03)_100%)] px-9 py-5 text-xl font-bold backdrop-blur-3xl shadow-[0_20px_60px_rgba(0,0,0,.45),inset_0_1px_1px_rgba(255,255,255,.22),0_0_35px_rgba(255,110,40,.18)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(255,120,40,.28),inset_0_1px_2px_rgba(255,255,255,.28)] ${isDay ? 'text-orange-500' : 'text-white'}`}>
 
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_leftrgba(255,255,255,.22),transparent_38%)]"></div>
 
@@ -101,7 +101,7 @@ export default function Home() {
     </span>
   </button>
 
-  <button className="group relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.08)_0%,rgba(255,255,255,.02)_100%)] px-9 py-5 text-lg font-bold text-white backdrop-blur-3xl shadow-[0_18px_55px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.12)] transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-white/10">
+  <button className={`group relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.08)_0%,rgba(255,255,255,.02)_100%)] px-9 py-5 text-lg font-bold backdrop-blur-3xl shadow-[0_18px_55px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.12)] transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-white/10 ${isDay ? 'text-orange-500' : 'text-white'}`}>
 
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,.14),transparent_40%)]"></div>
 
