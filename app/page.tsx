@@ -49,15 +49,15 @@ const storeInView = useInView(storeRef, {
   amount: 0.25,
 })
   const theme = useMemo(() => ({
-    page: isDay ? 'bg-[#f7f8fb] text-slate-950' : 'bg-[#030407] text-white',
-    panel: isDay
-      ? 'border-white/70 bg-white/60 shadow-[0_28px_90px_rgba(15,23,42,.12)]'
-      : 'border-white/10 bg-black/36 shadow-[0_28px_90px_rgba(0,0,0,.55)]',
-    muted: isDay ? 'text-slate-600' : 'text-white/62',
-    heroBg: isDay
-      ? 'bg-[radial-gradient(circle_at_73%_38%,rgba(255,106,0,.20),transparent_33%),linear-gradient(90deg,rgba(255,255,255,.96)_0%,rgba(255,255,255,.70)_46%,rgba(255,255,255,.48)_100%)]'
-      : 'bg-[radial-gradient(circle_at_74%_38%,rgba(255,72,0,.38),transparent_34%),radial-gradient(circle_at_20%_30%,rgba(0,0,0,.88),transparent_44%),linear-gradient(90deg,#040507_0%,rgba(4,5,7,.88)_45%,rgba(4,5,7,.56)_100%)]',
-  }), [isDay])
+  page: isDay ? 'bg-[#f7f8fb] text-slate-950' : 'bg-[#030407] text-white',
+  panel: isDay
+    ? 'border-white/70 bg-white/60 shadow-[0_28px_90px_rgba(15,23,42,.12)]'
+    : 'border-white/10 bg-black/36 shadow-[0_28px_90px_rgba(0,0,0,.55)]',
+  muted: isDay ? 'text-slate-600' : 'text-white/62',
+  heroBg: isDay
+    ? 'bg-[radial-gradient(circle_at_73%_38%,rgba(255,106,0,.20),transparent_33%),linear-gradient(90deg,rgba(255,255,255,.96)_0%,rgba(255,255,255,.70)_46%,rgba(255,255,255,.48)_100%)]'
+    : 'bg-[radial-gradient(circle_at_74%_38%,rgba(255,72,0,.38),transparent_34%),radial-gradient(circle_at_20%_30%,rgba(0,0,0,.88),transparent_44%),linear-gradient(90deg,#040507_0%,rgba(4,5,7,.88)_45%,rgba(4,5,7,.56)_100%)]',
+}), [isDay])
 
   return (
     <main className={`min-h-screen overflow-hidden transition-colors duration-700 ${theme.page}`}>
@@ -255,8 +255,9 @@ transition={{
           </div>
         ))}
       </div>
-    </div>
-  </div>
+     </div>
+</motion.section>
+
 <motion.section
   ref={storeRef}
   id="store"
@@ -409,6 +410,7 @@ transition={{
             </button>
           </div>
         </div>
+       </div>
     ))}
   </div>
 </motion.section>
