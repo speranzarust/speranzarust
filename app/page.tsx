@@ -225,8 +225,7 @@ export default function Home() {
 
   <div className="grid gap-5 lg:grid-cols-3">
     {[
-      [
-  {
+      {
     title: 'Nova VIP',
     price: '$4.99',
     desc: 'Entry-level VIP with starter perks, queue priority, and beginner rewards.',
