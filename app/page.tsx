@@ -255,7 +255,8 @@ transition={{
           </div>
         ))}
       </div>
-     </div>
+    </div>
+  </div>
 </motion.section>
 
 <motion.section
@@ -414,6 +415,7 @@ transition={{
     ))}
   </div>
 </motion.section>
+
 <motion.section
   className="py-10"
   variants={revealUp}
