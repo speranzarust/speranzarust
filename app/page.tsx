@@ -281,7 +281,6 @@ export default function Home() {
     color: 'from-rose-500 to-red-700',
     glow: 'rgba(255,40,80,.38)',
   },
-]
     ].map((item) => (
       <div
         key={item.title}
