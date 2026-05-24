@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { useMemo, useState } from 'react'
-import { motion } from 'framer-motion'
+import { useMemo, useState, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { Activity, BarChart3, CalendarClock, Crown, Flame, Gamepad2, Moon, Shield, ShoppingBag, Skull, Sun, Sword, Trophy, Users, Zap } from 'lucide-react'
 
 const stats = [
@@ -38,7 +38,11 @@ const revealUp: any = {
 export default function Home() {
   const [mode, setMode] = useState<'night' | 'day'>('night')
   const isDay = mode === 'day'
-  
+  const dashboardRef = useRef(null)
+
+const dashboardInView = useInView(dashboardRef, {
+  amount: 0.35,
+})
   const theme = useMemo(() => ({
     page: isDay ? 'bg-[#f7f8fb] text-slate-950' : 'bg-[#030407] text-white',
     panel: isDay
@@ -169,10 +173,32 @@ export default function Home() {
 <motion.section
   id="dashboard"
   className="mt-10"
-  variants={revealUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.2 }}
+  ref={dashboardRef}
+initial={{
+  opacity: 0,
+  y: 100,
+  scale: 0.94,
+  filter: 'blur(20px)',
+}}
+animate={
+  dashboardInView
+    ? {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        filter: 'blur(0px)',
+      }
+    : {
+        opacity: 0,
+        y: 80,
+        scale: 0.96,
+        filter: 'blur(18px)',
+      }
+}
+transition={{
+  duration: 0.9,
+  ease: 'easeOut',
+}}
 >
   <div className="mb-6">
     <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
