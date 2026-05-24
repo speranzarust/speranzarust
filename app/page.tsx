@@ -225,29 +225,63 @@ export default function Home() {
 
   <div className="grid gap-5 lg:grid-cols-3">
     {[
-      {
-        title: 'Legendary VIP',
-        price: '$14.99',
-        desc: 'Priority queue, exclusive kits, premium perks and VIP commands.',
-        color: 'from-orange-500 to-red-600',
-        glow: 'rgba(255,120,40,.35)',
-      },
+      [
+  {
+    title: 'Nova VIP',
+    price: '$4.99',
+    desc: 'Entry-level VIP with starter perks, queue priority, and beginner rewards.',
+    color: 'from-cyan-400 to-blue-600',
+    glow: 'rgba(0,180,255,.30)',
+  },
 
-      {
-        title: 'Battle Pass',
-        price: '$9.99',
-        desc: 'Unlock seasonal rewards, missions and exclusive progression tiers.',
-        color: 'from-cyan-500 to-blue-600',
-        glow: 'rgba(0,180,255,.35)',
-      },
+  {
+    title: 'Titan VIP',
+    price: '$9.99',
+    desc: 'Advanced VIP perks with stronger kits, better rewards, and extra commands.',
+    color: 'from-orange-400 to-orange-700',
+    glow: 'rgba(255,120,40,.32)',
+  },
 
-      {
-        title: 'Gold Scrap Pack',
-        price: '$4.99',
-        desc: 'Instantly boost your economy and dominate the server faster.',
-        color: 'from-yellow-400 to-orange-500',
-        glow: 'rgba(255,200,40,.35)',
-      },
+  {
+    title: 'Omega VIP',
+    price: '$14.99',
+    desc: 'Elite access with powerful kits, premium bonuses, and exclusive content.',
+    color: 'from-violet-500 to-fuchsia-600',
+    glow: 'rgba(180,80,255,.35)',
+  },
+
+  {
+    title: 'Speranza VIP',
+    price: '$24.99',
+    desc: 'The ultimate rank with legendary access, top-tier perks, and rare privileges.',
+    color: 'from-red-500 to-orange-600',
+    glow: 'rgba(255,70,40,.40)',
+  },
+
+  {
+    title: 'Battle Pass',
+    price: '$9.99',
+    desc: 'Unlock seasonal missions, exclusive rewards, and progression tiers.',
+    color: 'from-cyan-500 to-blue-600',
+    glow: 'rgba(0,180,255,.35)',
+  },
+
+  {
+    title: 'XP Booster',
+    price: '$4.99',
+    desc: 'Boost your leveling speed and progress faster through server systems.',
+    color: 'from-yellow-400 to-orange-500',
+    glow: 'rgba(255,200,40,.35)',
+  },
+
+  {
+    title: 'Legendary Weapons',
+    price: '$19.99',
+    desc: 'Unlock powerful custom weapons with unique effects and progression.',
+    color: 'from-rose-500 to-red-700',
+    glow: 'rgba(255,40,80,.38)',
+  },
+]
     ].map((item) => (
       <div
         key={item.title}
