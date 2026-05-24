@@ -22,16 +22,15 @@ const features = [
 ]
 
 const revealUp: any = {
-  hidden: { opacity: 0, y: 90, scale: 0.94, filter: 'blur(22px)' },
+  hidden: { opacity: 0, y: 60, filter: 'blur(14px)' },
 
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
     filter: 'blur(0px)',
 
     transition: {
-      duration: 0.9,
+      duration: 0.8,
       ease: 'easeOut',
     },
   },
@@ -172,8 +171,8 @@ export default function Home() {
   className="mt-10"
   variants={revealUp}
   initial="hidden"
-  animate="visible"
-  viewport={{ once: false, amount: 0.55, margin: "-15% 0px -15% 0px" }}
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.2 }}
 >
   <div className="mb-6">
     <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
