@@ -21,6 +21,20 @@ const features = [
   { title: 'Live Dashboard', desc: 'Track players, server health, wipes, events, and rankings.', icon: Activity },
 ]
 
+const revealUp = {
+  hidden: { opacity: 0, y: 60, filter: 'blur(14px)' },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+
+    transition: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+}
 export default function Home() {
   const [mode, setMode] = useState<'night' | 'day'>('night')
   const isDay = mode === 'day'
@@ -334,18 +348,53 @@ export default function Home() {
   </div>
 </section>
 
-        <section className="py-10">
-          <div className="mb-6"><div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">Speranza Systems</div><h2 className="mt-2 text-4xl font-black">Legendary Features</h2></div>
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => { const Icon = feature.icon; return (
-              <motion.div key={feature.title} whileHover={{ y: -8, scale: 1.01 }} transition={{ type: 'spring', stiffness: 260, damping: 22 }} className={`group relative overflow-hidden rounded-[2rem] border p-6 backdrop-blur-2xl ${theme.panel}`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-violet-500/10 opacity-0 transition group-hover:opacity-100" />
-                <div className="relative flex items-start gap-4"><div className="rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 p-3 text-white shadow-[0_0_36px_rgba(255,86,18,.32)]"><Icon className="h-6 w-6" /></div><div><h3 className="text-xl font-black">{feature.title}</h3><p className={`mt-2 leading-7 ${theme.muted}`}>{feature.desc}</p></div></div>
-              </motion.div>
-            )})}
+<motion.section
+  className="py-10"
+  variants={revealUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.15 }}
+>
+  <div className="mb-6">
+    <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
+      Speranza Systems
+    </div>
+
+    <h2 className="mt-2 text-4xl font-black">
+      Legendary Features
+    </h2>
+  </div>
+
+  <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+    {features.map((feature) => {
+      const Icon = feature.icon
+
+      return (
+        <motion.div
+          key={feature.title}
+          whileHover={{ y: -8, scale: 1.01 }}
+          transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+          className={`group relative overflow-hidden rounded-[2rem] border p-6 backdrop-blur-2xl ${theme.panel}`}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-violet-500/10 opacity-0 transition group-hover:opacity-100" />
+
+          <div className="relative flex items-start gap-4">
+            <div className="rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 p-3 text-white shadow-[0_0_36px_rgba(255,86,18,.32)]">
+              <Icon className="h-6 w-6" />
+            </div>
+
+            <div>
+              <h3 className="text-xl font-black">
+                {feature.title}
+              </h3>
+
+              <p className={`mt-2 leading-7 ${theme.muted}`}>
+                {feature.desc}
+              </p>
+            </div>
           </div>
-        </section>
-      </div>
-    </main>
-  )
-}
+        </motion.div>
+      )
+    })}
+  </div>
+</motion.section>
