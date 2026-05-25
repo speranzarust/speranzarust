@@ -52,7 +52,7 @@ const storeInView = useInView(storeRef, {
   page: isDay ? 'bg-[#f7f8fb] text-slate-950' : 'bg-[#030407] text-white',
   panel: isDay
     ? 'border-white/70 bg-white/60 shadow-[0_28px_90px_rgba(15,23,42,.12)]'
-    : 'border-white/10 bg-black/36 shadow-[0_28px_90px_rgba(0,0,0,.55)]',
+    : 'border-white/10 bg-[linear-gradient(180deg,rgba(5,7,12,.88)_0%,rgba(5,7,12,.72)_100%)] shadow-[0_28px_90px_rgba(0,0,0,.55)] backdrop-blur-3xl',
   muted: isDay ? 'text-slate-600' : 'text-white/62',
   heroBg: isDay
     ? 'bg-[radial-gradient(circle_at_73%_38%,rgba(255,106,0,.20),transparent_33%),linear-gradient(90deg,rgba(255,255,255,.96)_0%,rgba(255,255,255,.70)_46%,rgba(255,255,255,.48)_100%)]'
@@ -88,7 +88,7 @@ const storeInView = useInView(storeRef, {
           ? 'border-orange-400/30 bg-orange-500/10 text-orange-500 shadow-[0_0_28px_rgba(255,120,40,.16)]'
           : isDay
             ? 'border-black/5 bg-white/45 text-slate-700 hover:text-orange-500'
-            : 'border-white/10 bg-white/5 text-white/80 hover:text-orange-400'
+            : 'border-white/10 bg-white/30 text-white/80 hover:text-orange-400'
       }`}
     >
       <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.16),transparent_42%,rgba(255,255,255,.06))] opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -232,7 +232,7 @@ transition={{
           ['Memory', '68%', 'Healthy'],
           ['Ping', '38ms', 'Excellent'],
         ].map(([label, value, status]) => (
-          <div key={label} className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+          <div key={label} className="rounded-3xl border border-white/10 bg-white/30 p-5 backdrop-blur-xl">
             <div className={`text-xs font-bold uppercase ${theme.muted}`}>{label}</div>
             <div className="mt-3 text-4xl font-black text-orange-500">{value}</div>
             <div className="mt-2 text-sm font-bold text-emerald-500">{status}</div>
@@ -250,7 +250,7 @@ transition={{
           ['Top Clan', 'Phoenix Order', '18 members online'],
           ['Current Event', 'World Boss', 'Live now'],
         ].map(([title, value, sub]) => (
-          <div key={title} className="rounded-3xl border border-white/10 bg-white/5 p-4">
+          <div key={title} className="rounded-3xl border border-white/10 bg-white/30 p-4">
             <div className={`text-xs font-bold uppercase ${theme.muted}`}>{title}</div>
             <div className="mt-1 text-xl font-black">{value}</div>
             <div className="text-sm font-bold text-orange-500">{sub}</div>
@@ -404,7 +404,7 @@ transition={{
               <div className="h-2 w-2 rounded-full bg-cyan-400" />
             </div>
 
-            <button className="group relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/5 px-6 py-3 text-sm font-bold text-white backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/30 hover:shadow-[0_0_30px_rgba(255,120,40,.22)]">
+            <button className="group relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/30 px-6 py-3 text-sm font-bold text-white backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/30 hover:shadow-[0_0_30px_rgba(255,120,40,.22)]">
               <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.18),transparent_42%,rgba(255,255,255,.05))] opacity-0 transition duration-300 group-hover:opacity-100" />
 
               <span className="relative">
