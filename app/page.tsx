@@ -50,20 +50,18 @@ const storeInView = useInView(storeRef, {
 })
   const theme = useMemo(() => ({
   page: 'bg-[#030407] text-white',
-  panel: isDay
-    ? 'border-white/70 bg-white/60 shadow-[0_28px_90px_rgba(15,23,42,.12)]'
-    : 'border-white/10 bg-[linear-gradient(180deg,rgba(5,7,12,.88)_0%,rgba(5,7,12,.72)_100%)] shadow-[0_28px_90px_rgba(0,0,0,.55)] backdrop-blur-3xl',
-  muted: isDay ? 'text-slate-600' : 'text-white/62',
-  heroBg: isDay
-    ? 'bg-[radial-gradient(circle_at_73%_38%,rgba(255,106,0,.20),transparent_33%),linear-gradient(90deg,rgba(255,255,255,.96)_0%,rgba(255,255,255,.70)_46%,rgba(255,255,255,.48)_100%)]'
-    : 'bg-[radial-gradient(circle_at_74%_38%,rgba(255,72,0,.38),transparent_34%),radial-gradient(circle_at_20%_30%,rgba(0,0,0,.88),transparent_44%),linear-gradient(90deg,#040507_0%,rgba(4,5,7,.88)_45%,rgba(4,5,7,.56)_100%)]',
+  panel:
+    'border-white/10 bg-[linear-gradient(180deg,rgba(5,7,12,.88)_0%,rgba(5,7,12,.72)_100%)] shadow-[0_28px_90px_rgba(0,0,0,.55)] backdrop-blur-3xl',
+  muted: 'text-white/62',
+  heroBg:
+    'bg-[radial-gradient(circle_at_74%_38%,rgba(255,72,0,.38),transparent_34%),radial-gradient(circle_at_20%_30%,rgba(0,0,0,.88),transparent_44%),linear-gradient(90deg,#040507_0%,rgba(4,5,7,.88)_45%,rgba(4,5,7,.56)_100%)]',
 }), [])
 
   return (
     <main className={`min-h-screen overflow-hidden transition-colors duration-700 ${theme.page}`}>
       <div className="pointer-events-none fixed inset-0">
         <div className="cyber-particles" />
-        <div className={isDay ? 'absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,106,0,.16),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(139,92,246,.14),transparent_30%)]' : 'absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,70,0,.16),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(255,0,0,.10),transparent_30%)]'} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,70,0,.16),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(255,0,0,.10),transparent_30%)]" />
         <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
       </div>
 
@@ -85,10 +83,8 @@ const storeInView = useInView(storeRef, {
       key={item}
       className={`neon-border neon-border-sm group relative overflow-hidden rounded-2xl border px-4 py-3 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 ${
         item === 'Home'
-          ? 'border-orange-400/30 bg-orange-500/10 text-orange-500 shadow-[0_0_28px_rgba(255,120,40,.16)]'
-          : isDay
-            ? 'border-black/5 bg-white/45 text-slate-700 hover:text-orange-500'
-            : 'border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.14)_0%,rgba(255,255,255,.04)_100%)] text-white/80 shadow-[inset_0_1px_1px_rgba(255,255,255,.14),0_12px_35px_rgba(0,0,0,.28)] hover:border-orange-400/30 hover:text-orange-400 hover:shadow-[0_18px_45px_rgba(255,120,40,.16),inset_0_1px_2px_rgba(255,255,255,.18)]'
+  ? 'border-orange-400/30 bg-orange-500/10 text-orange-500 shadow-[0_0_28px_rgba(255,120,40,.16)]'
+  : 'border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.14)_0%,rgba(255,255,255,.04)_100%)] text-white/80 shadow-[inset_0_1px_1px_rgba(255,255,255,.14),0_12px_35px_rgba(0,0,0,.28)] hover:border-orange-400/30 hover:text-orange-400 hover:shadow-[0_18px_45px_rgba(255,120,40,.16),inset_0_1px_2px_rgba(255,255,255,.18)]'
       }`}
     >
       <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.16),transparent_42%,rgba(255,255,255,.06))] opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -122,13 +118,13 @@ const storeInView = useInView(storeRef, {
             </div>
            <div className="h-[3px] flex-1 bg-orange-600" />
           </div>
-                <p className={`mt-8 text-2xl font-bold uppercase tracking-wide ${isDay ? 'text-slate-800' : 'text-white/90'}`}>The Ultimate Rust Survival Experience</p>
+                <p className="mt-8 text-2xl font-bold uppercase tracking-wide text-white/90">
                 <p className={`mt-4 max-w-xl text-lg leading-8 ${theme.muted}`}>Speranza 10X PVE+ with Custom Weapons, Gold Scrap, Bosses, Raidable Bases, and Legendary Armor.</p>
               </motion.div>
 
              <div className="mt-8 grid w-full max-w-[700px] grid-cols-2 gap-4">
 
-  <button className={`neon-border group relative w-full justify-center overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.16)_0%,rgba(255,255,255,.03)_100%)] py-5 text-xl font-bold backdrop-blur-3xl shadow-[0_20px_60px_rgba(0,0,0,.45),inset_0_1px_1px_rgba(255,255,255,.22),0_0_35px_rgba(255,110,40,.18)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(255,120,40,.28),inset_0_1px_2px_rgba(255,255,255,.28)] ${isDay ? 'text-orange-500' : 'text-white'}`}>
+  <button className="neon-border group relative w-full justify-center overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.16)_0%,rgba(255,255,255,.03)_100%)] py-5 text-xl font-bold text-white backdrop-blur-3xl shadow-[0_20px_60px_rgba(0,0,0,.45),inset_0_1px_1px_rgba(255,255,255,.22),0_0_35px_rgba(255,110,40,.18)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(255,120,40,.28),inset_0_1px_2px_rgba(255,255,255,.28)]">
 
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,.22),transparent_38%)]"></div>
 
@@ -140,7 +136,7 @@ const storeInView = useInView(storeRef, {
     </span>
   </button>
 
-  <button className={`neon-border group relative w-full justify-center overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.08)_0%,rgba(255,255,255,.02)_100%)] py-5 text-lg font-bold backdrop-blur-3xl shadow-[0_18px_55px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.12)] transition-all duration-500 hover:-translate-y-2 hover:-translate-y-2 hover:border-orange-400/30 hover:bg-white/10 hover:shadow-[0_25px_70px_rgba(255,120,40,.28),inset_0_1px_2px_rgba(255,255,255,.28)] ${isDay ? 'text-orange-500' : 'text-white'}`}>
+  <button className="neon-border group relative w-full justify-center overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.16)_0%,rgba(255,255,255,.03)_100%)] py-5 text-xl font-bold text-white backdrop-blur-3xl shadow-[0_20px_60px_rgba(0,0,0,.45),inset_0_1px_1px_rgba(255,255,255,.22),0_0_35px_rgba(255,110,40,.18)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(255,120,40,.28),inset_0_1px_2px_rgba(255,255,255,.28)]">
 
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,.14),transparent_40%)]"></div>
     
