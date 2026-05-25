@@ -83,7 +83,7 @@ const storeInView = useInView(storeRef, {
   {['Home', 'Dashboard', 'Store', 'Seasons', 'Leaderboards', 'Discord'].map((item) => (
     <button
       key={item}
-      className={`group relative overflow-hidden rounded-2xl border px-4 py-3 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 ${
+      className={`neon-border group relative overflow-hidden rounded-2xl border px-4 py-3 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 ${
         item === 'Home'
           ? 'border-orange-400/30 bg-orange-500/10 text-orange-500 shadow-[0_0_28px_rgba(255,120,40,.16)]'
           : isDay
@@ -102,7 +102,11 @@ const storeInView = useInView(storeRef, {
               {isDay ? <Sun className="h-4 w-4 text-orange-500" /> : <Moon className="h-4 w-4 text-orange-300" />}
               <span className="hidden sm:inline">{isDay ? 'Day Mode' : 'Night Mode'}</span>
             </button>
-            <button className="rounded-2xl border border-orange-500/40 bg-orange-600/20 px-5 py-3 text-sm font-black text-orange-100 shadow-[0_0_35px_rgba(255,88,20,.24)] backdrop-blur-xl transition hover:bg-orange-600/30">Join Discord</button>
+            <button className="neon-border group relative overflow-hidden rounded-2xl border border-orange-500/40 bg-[linear-gradient(180deg,rgba(255,120,40,.32)_0%,rgba(255,70,20,.16)_100%)] px-5 py-3 text-sm font-black text-orange-100 shadow-[0_18px_45px_rgba(255,88,20,.22),inset_0_1px_1px_rgba(255,255,255,.18)] backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 hover:border-orange-300/60 hover:shadow-[0_24px_65px_rgba(255,100,30,.34),inset_0_1px_2px_rgba(255,255,255,.26)]">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,.20),transparent_40%)]"></div>
+  <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,.16),transparent)]"></div>
+  <span className="relative">Join Discord</span>
+</button>
           </div>
         </nav>
 
