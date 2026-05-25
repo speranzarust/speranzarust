@@ -133,8 +133,8 @@ const storeInView = useInView(storeRef, {
 
     <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,.16),transparent)]"></div>
 
-    <span className="relative flex items-center justify-center gap-3 text-xl font-black">
-      <Zap className="h-5 w-5 text-orange-400 drop-shadow-[0_0_12px_rgba(255,120,40,.8)]" />
+    <span className="relative flex items-center justify-center gap-3 text-2xl tracking-wide font-black">
+      <Zap className="h-8 w-8 text-orange-400 drop-shadow-[0_0_12px_rgba(255,120,40,.8)]" />
       JOIN SERVER
     </span>
   </button>
@@ -145,7 +145,7 @@ const storeInView = useInView(storeRef, {
 
     <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,.10),transparent)]"></div>
 
-    <span className="relative text-xl font-black">
+    <span className="relative text-2xl tracking-wide font-black">
       VIEW FEATURES
     </span>
   </button>
