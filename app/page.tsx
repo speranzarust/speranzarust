@@ -13,7 +13,7 @@ const stats = [
 ]
 
 const features = [
-  { title: 'Legendary Weapons', desc: 'Custom weapon progression with mythic power tiers.', icon: Sword },
+  { title: 'Custom Weapons', desc: 'Custom weapon progression with mythic power tiers.', icon: Sword },
   { title: 'Gold Scrap Economy', desc: 'A premium PVE+ economy layer built around progression.', icon: Crown },
   { title: 'World Bosses', desc: 'Fight brutal bosses and claim rare seasonal rewards.', icon: Skull },
   { title: 'Raidable Bases', desc: 'Dynamic AI bases with escalating loot and challenge levels.', icon: Shield },
@@ -123,7 +123,7 @@ const storeInView = useInView(storeRef, {
            <div className="h-[3px] flex-1 bg-orange-600" />
           </div>
                 <p className={`mt-8 text-2xl font-bold uppercase tracking-wide ${isDay ? 'text-slate-800' : 'text-white/90'}`}>The Ultimate Rust Survival Experience</p>
-                <p className={`mt-4 max-w-xl text-lg leading-8 ${theme.muted}`}>Speranza 10X PVE+ with Legendary Weapons, Gold Scrap, Bosses, Raidable Bases, and Legendary Armor.</p>
+                <p className={`mt-4 max-w-xl text-lg leading-8 ${theme.muted}`}>Speranza 10X PVE+ with Custom Weapons, Gold Scrap, Bosses, Raidable Bases, and Legendary Armor.</p>
               </motion.div>
 
              <div className="mt-8 grid w-full max-w-[700px] grid-cols-2 gap-4">
@@ -358,7 +358,7 @@ transition={{
   },
 
   {
-    title: 'Legendary Weapons',
+    title: 'Custom Weapons',
     price: '$19.99',
     desc: 'Unlock powerful custom weapons with unique effects and progression.',
     color: 'from-rose-500 to-red-700',
