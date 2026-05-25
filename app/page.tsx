@@ -38,7 +38,6 @@ const revealUp: any = {
 export default function Home() {
   const [mode, setMode] = useState<'night' | 'day'>('night')
   const [selectedPackage, setSelectedPackage] = useState<any>(null)
-  const isDay = mode === 'day'
   const dashboardRef = useRef(null)
 
 const dashboardInView = useInView(dashboardRef, {
@@ -50,7 +49,7 @@ const storeInView = useInView(storeRef, {
   amount: 0.25,
 })
   const theme = useMemo(() => ({
-  page: isDay ? 'bg-[#f7f8fb] text-slate-950' : 'bg-[#030407] text-white',
+  page: 'bg-[#030407] text-white',
   panel: isDay
     ? 'border-white/70 bg-white/60 shadow-[0_28px_90px_rgba(15,23,42,.12)]'
     : 'border-white/10 bg-[linear-gradient(180deg,rgba(5,7,12,.88)_0%,rgba(5,7,12,.72)_100%)] shadow-[0_28px_90px_rgba(0,0,0,.55)] backdrop-blur-3xl',
@@ -58,7 +57,7 @@ const storeInView = useInView(storeRef, {
   heroBg: isDay
     ? 'bg-[radial-gradient(circle_at_73%_38%,rgba(255,106,0,.20),transparent_33%),linear-gradient(90deg,rgba(255,255,255,.96)_0%,rgba(255,255,255,.70)_46%,rgba(255,255,255,.48)_100%)]'
     : 'bg-[radial-gradient(circle_at_74%_38%,rgba(255,72,0,.38),transparent_34%),radial-gradient(circle_at_20%_30%,rgba(0,0,0,.88),transparent_44%),linear-gradient(90deg,#040507_0%,rgba(4,5,7,.88)_45%,rgba(4,5,7,.56)_100%)]',
-}), [isDay])
+}), [])
 
   return (
     <main className={`min-h-screen overflow-hidden transition-colors duration-700 ${theme.page}`}>
@@ -99,10 +98,6 @@ const storeInView = useInView(storeRef, {
 </div>
 
           <div className="flex items-center gap-3">
-            <button onClick={() => setMode(isDay ? 'night' : 'day')} className={`flex h-12 items-center gap-2 rounded-2xl border px-4 text-sm font-black backdrop-blur-xl transition ${theme.panel}`}>
-              {isDay ? <Sun className="h-4 w-4 text-orange-500" /> : <Moon className="h-4 w-4 text-orange-300" />}
-              <span className="hidden sm:inline">{isDay ? 'Day Mode' : 'Night Mode'}</span>
-            </button>
             <button className="neon-border neon-border-sm group relative overflow-hidden rounded-2xl border border-orange-500/40 bg-[linear-gradient(180deg,rgba(255,120,40,.32)_0%,rgba(255,70,20,.16)_100%)] px-5 py-3 text-sm font-black text-orange-400 shadow-[0_18px_45px_rgba(255,88,20,.22),inset_0_1px_1px_rgba(255,255,255,.18)] backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 hover:border-orange-300/60 hover:shadow-[0_24px_65px_rgba(255,100,30,.34),inset_0_1px_2px_rgba(255,255,255,.26)]">
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,.20),transparent_40%)]"></div>
   <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,.16),transparent)]"></div>
