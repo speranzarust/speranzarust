@@ -114,12 +114,13 @@ const storeInView = useInView(storeRef, {
             <div className="z-10 max-w-2xl">
               <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7 }}>
                 <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-orange-500/35 bg-orange-500/10 px-5 py-3 text-sm font-black text-orange-400 backdrop-blur-xl"><Flame className="h-4 w-4" /> #1 RUST EXPERIENCE</div>
-                <h1 className="font-black leading-[.82] tracking-tight text-[clamp(4rem,8vw,9rem)] drop-shadow-[0_12px_30px_rgba(0,0,0,.45)]">SPERANZA</h1>
-                <div className="mt-4 flex items-center gap-4">
-                  <div className="h-[3px] w-20 bg-orange-600" />
-                  <div className="text-3xl font-black tracking-[.42em] text-orange-500">RUST SERVER</div>
-                  <div className="h-[3px] flex-1 bg-orange-600" />
-                </div>
+                <h1 className="font-black leading-[.82] tracking-tight text-[clamp(4.5rem,6vw,7.2rem)] drop-shadow-[0_12px_30px_rgba(0,0,0,.45)]">SPERANZA</h1>
+                <div className="mt-4 flex w-full max-w-[680px] items-center justify-center gap-4">
+                <div className="h-[3px] flex-1 bg-orange-600" />
+                <div className="shrink-0 text-2xl font-black tracking-[.42em] text-orange-500 md:text-3xl"> RUST SERVER
+            </div>
+           <div className="h-[3px] flex-1 bg-orange-600" />
+          </div>
                 <p className={`mt-8 text-2xl font-bold uppercase tracking-wide ${isDay ? 'text-slate-800' : 'text-white/90'}`}>The Ultimate Rust Survival Experience</p>
                 <p className={`mt-4 max-w-xl text-lg leading-8 ${theme.muted}`}>Speranza 10X PVE+ with Legendary Weapons, Gold Scrap, Bosses, Raidable Bases, and Legendary Armor.</p>
               </motion.div>
