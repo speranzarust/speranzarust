@@ -418,10 +418,23 @@ transition={{
 
 <motion.section
   className="py-10"
-  variants={revealUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.15 }}
+  initial={{
+    opacity: 0,
+    y: 100,
+    scale: 0.94,
+    filter: 'blur(20px)',
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+  }}
+  viewport={{ once: false, amount: 0.25 }}
+  transition={{
+    duration: 0.9,
+    ease: 'easeOut',
+  }}
 >
   <div className="mb-6">
     <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
