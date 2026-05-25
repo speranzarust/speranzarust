@@ -199,17 +199,18 @@ h4,
   content: '';
   position: absolute;
   inset: 0;
-  padding: 1px;
+  padding: 2px;
   border-radius: inherit;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
+  filter: blur(0.6px);
 
   background: linear-gradient(
     120deg,
     transparent 0%,
    rgba(255,255,255,0.06) 20%,
-   rgba(255,255,255,0.28) 50%,
+   rgba(255,255,255,0.42) 50%,
    rgba(255,255,255,0.06) 80%,
     transparent 100%
   );
