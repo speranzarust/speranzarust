@@ -37,32 +37,36 @@ const revealUp: any = {
 };
 export default function Home() {
   const [selectedPackage, setSelectedPackage] = useState<any>(null)
+
   const dashboardRef = useRef(null)
+  const dashboardInView = useInView(dashboardRef, {
+    amount: 0.35,
+  })
 
-const dashboardInView = useInView(dashboardRef, {
-  amount: 0.35,
-})
-const storeRef = useRef(null)
+  const storeRef = useRef(null)
+  const storeInView = useInView(storeRef, {
+    amount: 0.25,
+  })
 
-const storeInView = useInView(storeRef, {
-  amount: 0.25,
-})
-  const theme = useMemo(() => ({
-  page: 'bg-[#030407] text-white',
-  panel:
-    'border-white/10 bg-[linear-gradient(180deg,rgba(5,7,12,.88)_0%,rgba(5,7,12,.72)_100%)] shadow-[0_28px_90px_rgba(0,0,0,.55)] backdrop-blur-3xl',
-  muted: 'text-white/62',
-  heroBg:
-    'bg-[radial-gradient(circle_at_74%_38%,rgba(255,72,0,.38),transparent_34%),radial-gradient(circle_at_20%_30%,rgba(0,0,0,.88),transparent_44%),linear-gradient(90deg,#040507_0%,rgba(4,5,7,.88)_45%,rgba(4,5,7,.56)_100%)]',
-}), [])
-
-  return (
-    <main className={`min-h-screen overflow-hidden transition-colors duration-700 ${theme.page}`}>
-      <div className="pointer-events-none fixed inset-0">
-        <div className="cyber-particles" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,70,0,.16),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(255,0,0,.10),transparent_30%)]" />
-        <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
-      </div>
+  const theme = useMemo(
+    () => ({
+      page: 'bg-[#030407] text-white',
+      panel:
+        'border-white/10 bg-[linear-gradient(180deg,rgba(5,7,12,.88)_0%,rgba(5,7,12,.72)_100%)] shadow-[0_28px_90px_rgba(0,0,0,.55)] backdrop-blur-3xl',
+      muted: 'text-white/62',
+      heroBg:
+        'bg-[radial-gradient(circle_at_74%_38%,rgba(255,72,0,.38),transparent_34%),radial-gradient(circle_at_20%_30%,rgba(0,0,0,.88),transparent_44%),linear-gradient(90deg,#040507_0%,rgba(4,5,7,.88)_45%,rgba(4,5,7,.56)_100%)]',
+    }),
+    []
+  )
+  
+return (
+  <main className={`min-h-screen overflow-hidden transition-colors duration-700 ${theme.page}`}>
+    <div className="pointer-events-none fixed inset-0">
+      <div className="cyber-particles" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,70,0,.16),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(255,0,0,.10),transparent_30%)]" />
+      <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
+    </div>
 
       <div className="relative mx-auto max-w-[1580px] px-5 py-5 lg:px-8">
         <nav className={`sticky top-4 z-40 mb-6 flex items-center justify-between rounded-[2rem] border px-5 py-4 backdrop-blur-2xl ${theme.panel}`}>
