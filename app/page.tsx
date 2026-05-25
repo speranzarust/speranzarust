@@ -37,6 +37,7 @@ const revealUp: any = {
 };
 export default function Home() {
   const [mode, setMode] = useState<'night' | 'day'>('night')
+  const [selectedPackage, setSelectedPackage] = useState<any>(null)
   const isDay = mode === 'day'
   const dashboardRef = useRef(null)
 
@@ -409,7 +410,10 @@ transition={{
               <div className="h-2 w-2 rounded-full bg-cyan-400" />
             </div>
 
-            <button className="group relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/30 px-6 py-3 text-sm font-bold text-white backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/30 hover:shadow-[0_0_30px_rgba(255,120,40,.22)]">
+            <button
+  onClick={() => setSelectedPackage(item)}
+  className="group relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/30 px-6 py-3 text-sm font-bold text-white backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/30 hover:shadow-[0_0_30px_rgba(255,120,40,.22)]"
+>
               <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.18),transparent_42%,rgba(255,255,255,.05))] opacity-0 transition duration-300 group-hover:opacity-100" />
 
               <span className="relative">
@@ -422,6 +426,73 @@ transition={{
     ))}
   </div>
 </motion.section>
+
+{selectedPackage && (
+  <motion.div
+    className="fixed inset-0 z-50 grid place-items-center bg-black/70 px-5 backdrop-blur-xl"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+  >
+    <motion.div
+      initial={{ opacity: 0, y: 40, scale: 0.92, filter: 'blur(14px)' }}
+      animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+      transition={{ duration: 0.45, ease: 'easeOut' }}
+      className={`neon-border relative w-full max-w-xl overflow-hidden rounded-[2rem] border p-7 backdrop-blur-3xl ${theme.panel}`}
+    >
+      <div className={`absolute inset-0 bg-gradient-to-br ${selectedPackage.color} opacity-[0.12]`} />
+      <div
+        className="absolute -right-16 -top-16 h-56 w-56 rounded-full blur-3xl"
+        style={{ background: selectedPackage.glow }}
+      />
+
+      <button
+        onClick={() => setSelectedPackage(null)}
+        className="absolute right-5 top-5 z-10 rounded-2xl border border-white/10 bg-white/10 px-4 py-2 text-xl font-black text-white backdrop-blur-xl transition hover:bg-white/20"
+      >
+        ×
+      </button>
+
+      <div className="relative">
+        <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
+          Confirm Package
+        </div>
+
+        <h3 className="mt-4 text-4xl font-black">
+          {selectedPackage.title}
+        </h3>
+
+        <div className={`mt-5 inline-flex rounded-2xl bg-gradient-to-br ${selectedPackage.color} px-5 py-3 text-2xl font-black text-white shadow-[0_0_35px_rgba(255,120,40,.25)]`}>
+          {selectedPackage.price}
+        </div>
+
+        <p className={`mt-6 text-lg leading-8 ${theme.muted}`}>
+          {selectedPackage.desc}
+        </p>
+
+        <div className="mt-7 grid gap-3">
+          {['Instant activation after purchase', 'Linked to your in-game account', 'Monthly package benefits'].map((perk) => (
+            <div key={perk} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold text-white/80">
+              {perk}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 grid grid-cols-2 gap-4">
+          <button
+            onClick={() => setSelectedPackage(null)}
+            className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-black text-white/80 transition hover:bg-white/15"
+          >
+            Close
+          </button>
+
+          <button className="neon-border rounded-2xl border border-orange-500/40 bg-orange-500/20 px-5 py-4 font-black text-orange-400 shadow-[0_0_35px_rgba(255,100,30,.22)] transition hover:-translate-y-1">
+            Continue
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  </motion.div>
+)}
 
 <motion.section
   className="py-10"
