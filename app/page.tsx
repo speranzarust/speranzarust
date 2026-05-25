@@ -367,7 +367,7 @@ transition={{
     ].map((item) => (
       <div
         key={item.title}
-        className={`group relative overflow-hidden rounded-[2rem] border p-6 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 ${theme.panel}`}
+        className={`group relative overflow-hidden rounded-[2rem] border p-6 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-3 hover:rotate-x-2 hover:rotate-y-1 hover:shadow-[0_35px_90px_rgba(255,120,40,.18)] transform-gpu ${theme.panel}`}
       >
         <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-[0.08] transition duration-500 group-hover:opacity-[0.16]`} />
 
@@ -375,7 +375,12 @@ transition={{
           className="absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl transition duration-500 group-hover:scale-125"
           style={{ background: item.glow }}
         />
+          <div
+  className="absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl transition duration-500 group-hover:scale-125"
+  style={{ background: item.glow }}
+/>
 
+<div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,.10),transparent)]"></div>
         <div className="relative">
           <div className="flex items-center justify-between">
             <div>
