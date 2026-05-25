@@ -206,14 +206,16 @@ h4,
   transition: opacity 0.4s ease;
   filter: blur(0.6px);
 
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-   rgba(255,255,255,0.06) 20%,
-   rgba(255,255,255,0.42) 50%,
-   rgba(255,255,255,0.06) 80%,
-    transparent 100%
-  );
+ background: linear-gradient(
+  120deg,
+  transparent 0%,
+  rgba(255,255,255,0.05) 18%,
+  rgba(255,140,60,0.18) 38%,
+  rgba(255,255,255,0.34) 50%,
+  rgba(255,140,60,0.18) 62%,
+  rgba(255,255,255,0.05) 82%,
+  transparent 100%
+);
 
   background-size: 300% 300%;
 
