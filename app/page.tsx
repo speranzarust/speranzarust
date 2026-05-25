@@ -37,8 +37,6 @@ const revealUp: any = {
 };
 export default function Home() {
   const [mode, setMode] = useState<'night' | 'day'>('night')
-  const isDay = mode === 'day'
-  const [mode, setMode] = useState<'night' | 'day'>('night')
 const isDay = mode === 'day'
 
 const [mouse, setMouse] = useState({ x: 50, y: 50 })
