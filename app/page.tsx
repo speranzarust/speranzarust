@@ -232,7 +232,7 @@ transition={{
           ['Memory', '68%', 'Healthy'],
           ['Ping', '38ms', 'Excellent'],
         ].map(([label, value, status]) => (
-          <div key={label} className="rounded-3xl border border-white/10 bg-white/30 p-5 backdrop-blur-xl">
+          <div key={label} className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.14)_0%,rgba(255,255,255,.04)_100%)] p-5 backdrop-blur-3xl shadow-[0_18px_55px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.14)] transition-all duration-500">
             <div className={`text-xs font-bold uppercase ${theme.muted}`}>{label}</div>
             <div className="mt-3 text-4xl font-black text-orange-500">{value}</div>
             <div className="mt-2 text-sm font-bold text-emerald-500">{status}</div>
@@ -250,7 +250,7 @@ transition={{
           ['Top Clan', 'Phoenix Order', '18 members online'],
           ['Current Event', 'World Boss', 'Live now'],
         ].map(([title, value, sub]) => (
-          <div key={title} className="rounded-3xl border border-white/10 bg-white/30 p-4">
+          <div key={title} className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.14)_0%,rgba(255,255,255,.04)_100%)] p-4 backdrop-blur-3xl shadow-[0_18px_55px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.14)] transition-all duration-500">
             <div className={`text-xs font-bold uppercase ${theme.muted}`}>{title}</div>
             <div className="mt-1 text-xl font-black">{value}</div>
             <div className="text-sm font-bold text-orange-500">{sub}</div>
