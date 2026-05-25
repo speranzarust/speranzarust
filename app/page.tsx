@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useMemo, useState, useRef, useEffect } from 'react'
+import { useMemo, useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Activity, BarChart3, CalendarClock, Crown, Flame, Gamepad2, Moon, Shield, ShoppingBag, Skull, Sun, Sword, Trophy, Users, Zap } from 'lucide-react'
 
@@ -37,26 +37,8 @@ const revealUp: any = {
 };
 export default function Home() {
   const [mode, setMode] = useState<'night' | 'day'>('night')
-const isDay = mode === 'day'
-
-const [mouse, setMouse] = useState({ x: 50, y: 50 })
-
-useEffect(() => {
-  const handleMouseMove = (event: MouseEvent) => {
-    setMouse({
-      x: (event.clientX / window.innerWidth) * 100,
-      y: (event.clientY / window.innerHeight) * 100,
-    })
-  }
-
-  window.addEventListener('mousemove', handleMouseMove)
-
-  return () => {
-    window.removeEventListener('mousemove', handleMouseMove)
-  }
-}, [])
-
-const dashboardRef = useRef(null)
+  const isDay = mode === 'day'
+  const dashboardRef = useRef(null)
 
 const dashboardInView = useInView(dashboardRef, {
   amount: 0.35,
@@ -80,15 +62,6 @@ const storeInView = useInView(storeRef, {
   return (
     <main className={`min-h-screen overflow-hidden transition-colors duration-700 ${theme.page}`}>
       <div className="pointer-events-none fixed inset-0">
-  <div className="cyber-particles" />
-
-  <div
-    className="mouse-glow"
-    style={{
-      left: `${mouse.x}%`,
-      top: `${mouse.y}%`,
-    }}
-  />
         <div className="cyber-particles" />
         <div className={isDay ? 'absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,106,0,.16),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(139,92,246,.14),transparent_30%)]' : 'absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,70,0,.16),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(255,0,0,.10),transparent_30%)]'} />
         <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
