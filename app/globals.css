@@ -238,3 +238,11 @@ h4,
     background-position: 300% 50%;
   }
 }
+.neon-border-sm::before {
+  padding: 1px;
+  filter: blur(0.25px);
+}
+
+.neon-border-sm:hover::before {
+  animation: neonBorderFlow 6s linear infinite;
+}
