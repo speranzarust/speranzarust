@@ -198,19 +198,24 @@ h4,
 .neon-border::before {
   content: '';
   position: absolute;
-  inset: -1px;
-  border-radius: inherit;
+  inset: 0;
   padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
   background: linear-gradient(
     120deg,
-    transparent,
-    rgba(255, 115, 0, 0.75),
-    rgba(255, 255, 255, 0.28),
-    transparent
+    transparent 0%,
+    rgba(255, 115, 0, 0.85) 35%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 115, 0, 0.85) 65%,
+    transparent 100%
   );
-  opacity: 0;
-  transition: opacity 0.45s ease;
-  pointer-events: none;
+
+  background-size: 300% 300%;
+
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -220,15 +225,15 @@ h4,
 
 .neon-border:hover::before {
   opacity: 1;
-  animation: neonBorderSpin 2.8s linear infinite;
+  animation: neonBorderFlow 2.4s linear infinite;
 }
 
-@keyframes neonBorderSpin {
+@keyframes neonBorderFlow {
   from {
-    transform: rotate(0deg);
+    background-position: 0% 50%;
   }
 
   to {
-    transform: rotate(360deg);
+    background-position: 300% 50%;
   }
 }
