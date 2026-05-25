@@ -62,6 +62,7 @@ const storeInView = useInView(storeRef, {
   return (
     <main className={`min-h-screen overflow-hidden transition-colors duration-700 ${theme.page}`}>
       <div className="pointer-events-none fixed inset-0">
+        <div className="cyber-particles" />
         <div className={isDay ? 'absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,106,0,.16),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(139,92,246,.14),transparent_30%)]' : 'absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,70,0,.16),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(255,0,0,.10),transparent_30%)]'} />
         <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
       </div>
