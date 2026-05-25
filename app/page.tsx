@@ -36,7 +36,6 @@ const revealUp: any = {
   },
 };
 export default function Home() {
-  const [mode, setMode] = useState<'night' | 'day'>('night')
   const [selectedPackage, setSelectedPackage] = useState<any>(null)
   const dashboardRef = useRef(null)
 
