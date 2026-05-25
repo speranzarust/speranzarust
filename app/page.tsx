@@ -88,7 +88,7 @@ const storeInView = useInView(storeRef, {
           ? 'border-orange-400/30 bg-orange-500/10 text-orange-500 shadow-[0_0_28px_rgba(255,120,40,.16)]'
           : isDay
             ? 'border-black/5 bg-white/45 text-slate-700 hover:text-orange-500'
-            : 'border-white/10 bg-white/30 text-white/80 hover:text-orange-400'
+            : 'border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.14)_0%,rgba(255,255,255,.04)_100%)] text-white/80 shadow-[inset_0_1px_1px_rgba(255,255,255,.14),0_12px_35px_rgba(0,0,0,.28)] hover:border-orange-400/30 hover:text-orange-400 hover:shadow-[0_18px_45px_rgba(255,120,40,.16),inset_0_1px_2px_rgba(255,255,255,.18)]'
       }`}
     >
       <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.16),transparent_42%,rgba(255,255,255,.06))] opacity-0 transition duration-300 group-hover:opacity-100" />
