@@ -191,18 +191,3 @@ h4,
     transform: translate3d(2%, 3%, 0) scale(1.08);
   }
 }
-.mouse-glow {
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  transform: translate(-50%, -50%);
-  border-radius: 999px;
-  background:
-    radial-gradient(circle, rgba(255, 115, 0, 0.16), transparent 58%),
-    radial-gradient(circle, rgba(255, 40, 20, 0.08), transparent 70%);
-  filter: blur(18px);
-  opacity: 0.9;
-  transition:
-    left 0.18s ease-out,
-    top 0.18s ease-out;
-}
