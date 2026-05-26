@@ -59,7 +59,6 @@ export default function Home() {
     }),
     []
   )
-  
 return (
   <main className={`min-h-screen overflow-hidden transition-colors duration-700 ${theme.page}`}>
     <div className="pointer-events-none fixed inset-0">
