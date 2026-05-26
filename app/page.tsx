@@ -59,7 +59,7 @@ export default function Home() {
     }),
     []
   )
-  
+
 return (
   <main className={`min-h-screen overflow-hidden transition-colors duration-700 ${theme.page}`}>
     <div className="pointer-events-none fixed inset-0">
@@ -122,7 +122,12 @@ return (
            <div className="h-[3px] flex-1 bg-orange-600" />
           </div>
                 <p className="mt-8 text-2xl font-bold uppercase tracking-wide text-white/90">
-                <p className={`mt-4 max-w-xl text-lg leading-8 ${theme.muted}`}>Speranza 10X PVE+ with Custom Weapons, Gold Scrap, Bosses, Raidable Bases, and Legendary Armor.</p>
+  The Ultimate Rust Survival Experience
+</p>
+
+<p className={`mt-4 max-w-xl text-lg leading-8 ${theme.muted}`}>
+  Speranza 10X PVE+ with Custom Weapons, Gold Scrap, Bosses, Raidable Bases, and Legendary Armor.
+</p>
               </motion.div>
 
              <div className="mt-8 grid w-full max-w-[700px] grid-cols-2 gap-4">
