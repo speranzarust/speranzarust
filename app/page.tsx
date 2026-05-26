@@ -166,10 +166,30 @@ return (
             </div>
 
             <div className="relative z-10 flex min-h-[620px] items-center justify-center">
-              <motion.div animate={{ y: [0, -16, 0], scale: [1, 1.025, 1] }} transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }} className="relative h-[560px] w-[560px] xl:h-[690px] xl:w-[690px]">
-                <div className="absolute inset-0 rounded-full bg-orange-600/20 blur-3xl" />
-                <Image src="/phoenix-v2.png" alt="Speranza Phoenix" fill className="object-contain drop-shadow-[0_0_80px_rgba(255,76,16,.78)]" priority />
-              </motion.div>
+             <motion.div
+  initial={{ opacity: 0, scale: 0.92, rotate: -2 }}
+  animate={{
+    opacity: 1,
+    y: [0, -10, 0],
+    scale: [1, 1.018, 1],
+    rotate: [-1, 1, -1],
+  }}
+  transition={{
+    duration: 8,
+    repeat: Infinity,
+    ease: 'easeInOut',
+  }}
+  className="relative h-[560px] w-[560px] xl:h-[690px] xl:w-[690px]"
+>
+  <div className="absolute inset-0 rounded-full bg-orange-600/20 blur-3xl" />
+  <Image
+    src="/phoenix-v2.png"
+    alt="Speranza Phoenix"
+    fill
+    className="object-contain drop-shadow-[0_0_80px_rgba(255,76,16,.78)]"
+    priority
+  />
+</motion.div>
             </div>
           </div>
         </section>
