@@ -97,10 +97,14 @@ return (
   const section = document.getElementById(item.id)
 
   if (section) {
-    section.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
+   const yOffset = -150
+const y =
+  section.getBoundingClientRect().top + window.scrollY + yOffset
+
+window.scrollTo({
+  top: y,
+  behavior: 'smooth',
+})
   }
 }}
       className={`neon-border neon-border-sm group relative overflow-hidden rounded-2xl border px-4 py-3 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 ${
@@ -222,7 +226,7 @@ return (
         </section>
 <motion.section
   id="dashboard"
-  className="mt-20"
+  className="mt-12"
   ref={dashboardRef}
 initial={{
   opacity: 0,
@@ -250,7 +254,7 @@ transition={{
   ease: 'easeOut',
 }}
 >
-  <div className="mb-20">
+  <div className="mb-6">
     <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
       Live Control Center
     </div>
