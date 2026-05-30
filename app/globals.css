@@ -248,7 +248,3 @@ h4,
 .neon-border-sm:hover::before {
   animation: neonBorderFlow 6s linear infinite;
 }
-
-section {
-  scroll-margin-top: 120px;
-}
