@@ -250,7 +250,7 @@ transition={{
   ease: 'easeOut',
 }}
 >
-  <div className="mb-6">
+  <div className="mb-20">
     <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
       Live Control Center
     </div>
@@ -618,7 +618,7 @@ transition={{
     ease: 'easeOut',
   }}
 >
-  <div className="mb-16">
+  <div className="mb-10">
     <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
       Speranza Systems
     </div>
