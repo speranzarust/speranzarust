@@ -81,17 +81,34 @@ return (
           </div>
 
          <div className="hidden items-center gap-2 text-sm font-bold uppercase lg:flex">
-  {['Home', 'Dashboard', 'Store', 'Seasons', 'Leaderboards', 'Discord'].map((item) => (
+  {[
+  { label: 'Home', id: 'home' },
+  { label: 'Dashboard', id: 'dashboard' },
+  { label: 'Store', id: 'store' },
+  { label: 'Seasons', id: 'features' },
+  { label: 'Leaderboards', id: 'dashboard' },
+  { label: 'Discord', id: 'discord' },
+].map((item) => (
     <button
-      key={item}
+  key={item.label}
+  onClick={() => {
+    const section = document.getElementById(item.id)
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }
+  }}
       className={`neon-border neon-border-sm group relative overflow-hidden rounded-2xl border px-4 py-3 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 ${
-        item === 'Home'
+        item.label === 'Home'
   ? 'border-orange-400/30 bg-orange-500/10 text-orange-500 shadow-[0_0_28px_rgba(255,120,40,.16)]'
   : 'border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.14)_0%,rgba(255,255,255,.04)_100%)] text-white/80 shadow-[inset_0_1px_1px_rgba(255,255,255,.14),0_12px_35px_rgba(0,0,0,.28)] hover:border-orange-400/30 hover:text-orange-400 hover:shadow-[0_18px_45px_rgba(255,120,40,.16),inset_0_1px_2px_rgba(255,255,255,.18)]'
       }`}
     >
       <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.16),transparent_42%,rgba(255,255,255,.06))] opacity-0 transition duration-300 group-hover:opacity-100" />
-      <span className="relative">{item}</span>
+      <span className="relative">{item.label}</span>
     </button>
   ))}
 </div>
@@ -105,7 +122,9 @@ return (
           </div>
         </nav>
 
-        <section className={`relative overflow-hidden rounded-[2.5rem] border backdrop-blur-2xl ${theme.panel}`}>
+        <section
+  id="home"
+  className={`relative overflow-hidden rounded-[2.5rem] border backdrop-blur-2xl ${theme.panel}`}>
           <div className={`absolute inset-0 ${theme.heroBg}`} />
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[radial-gradient(circle_at_70%_100%,rgba(255,60,0,.26),transparent_40%)]" />
           <motion.div animate={{ opacity: [0.25, 0.65, 0.25], scale: [1, 1.06, 1] }} transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }} className="absolute right-16 top-24 h-[600px] w-[600px] rounded-full bg-orange-600/20 blur-3xl" />
@@ -512,6 +531,7 @@ transition={{
 )}
 
 <motion.section
+  id="features"
   className="py-10"
   initial={{
     opacity: 0,
