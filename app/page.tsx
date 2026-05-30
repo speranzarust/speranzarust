@@ -306,7 +306,7 @@ transition={{
 
 <motion.section
   id="leaderboards"
-  className="mt-20"
+  className="mt-12"
   variants={revealUp}
   initial="hidden"
   whileInView="visible"
@@ -372,7 +372,7 @@ transition={{
 <motion.section
   ref={storeRef}
   id="store"
-  className="mt-20"
+  className="mt-12"
   initial={{
     opacity: 0,
     y: 100,
