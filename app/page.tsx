@@ -37,7 +37,7 @@ const revealUp: any = {
 };
 export default function Home() {
   const [selectedPackage, setSelectedPackage] = useState<any>(null)
-  const [activeSection, setActiveSection] = useState('home')
+
   const dashboardRef = useRef(null)
   const dashboardInView = useInView(dashboardRef, {
     amount: 0.35,
@@ -68,10 +68,10 @@ return (
       <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
     </div>
 
-      <div className="relative mx-auto max-w-[1580px] px-5 pt-40 lg:px-8">
+      <div className="relative mx-auto max-w-[1580px] px-5 py-5 lg:px-8">
         <nav className={`sticky top-4 z-40 mb-6 flex items-center justify-between rounded-[2rem] border px-5 py-4 backdrop-blur-2xl ${theme.panel}`}>
           <div className="flex items-center gap-3">
-            <div className="relative mx-auto max-w-[1580px] px-5 py-5 lg:px-8">
+            <div className="relative grid h-16 w-16 place-items-center overflow-hidden rounded-2xl bg-transparent shadow-[0_0_35px_rgba(255,76,16,.35)]">
               <Image src="/phoenix-v2.png" alt="Speranza Phoenix" fill className="object-contain p-1 drop-shadow-[0_0_18px_rgba(255,91,18,.85)]" priority />
             </div>
             <div>
@@ -81,36 +81,17 @@ return (
           </div>
 
          <div className="hidden items-center gap-2 text-sm font-bold uppercase lg:flex">
-  {[
-  { label: 'Home', id: 'home' },
-  { label: 'Dashboard', id: 'dashboard' },
-  { label: 'Store', id: 'store' },
-  { label: 'Seasons', id: 'features' },
-  { label: 'Leaderboards', id: 'leaderboards' },
-  { label: 'Discord', id: 'discord' },
-].map((item) => (
+  {['Home', 'Dashboard', 'Store', 'Seasons', 'Leaderboards', 'Discord'].map((item) => (
     <button
-  key={item.label}
- onClick={() => {
-  setActiveSection(item.id)
-
-  const section = document.getElementById(item.id)
-
-  if (section) {
-    section.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-  }
-}}
+      key={item}
       className={`neon-border neon-border-sm group relative overflow-hidden rounded-2xl border px-4 py-3 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 ${
-        activeSection === item.id
+        item === 'Home'
   ? 'border-orange-400/30 bg-orange-500/10 text-orange-500 shadow-[0_0_28px_rgba(255,120,40,.16)]'
   : 'border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.14)_0%,rgba(255,255,255,.04)_100%)] text-white/80 shadow-[inset_0_1px_1px_rgba(255,255,255,.14),0_12px_35px_rgba(0,0,0,.28)] hover:border-orange-400/30 hover:text-orange-400 hover:shadow-[0_18px_45px_rgba(255,120,40,.16),inset_0_1px_2px_rgba(255,255,255,.18)]'
       }`}
     >
       <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.16),transparent_42%,rgba(255,255,255,.06))] opacity-0 transition duration-300 group-hover:opacity-100" />
-      <span className="relative">{item.label}</span>
+      <span className="relative">{item}</span>
     </button>
   ))}
 </div>
@@ -124,9 +105,7 @@ return (
           </div>
         </nav>
 
-        <section
-  id="home"
-  className={`relative overflow-hidden rounded-[2.5rem] border backdrop-blur-2xl ${theme.panel}`}>
+        <section className={`relative overflow-hidden rounded-[2.5rem] border backdrop-blur-2xl ${theme.panel}`}>
           <div className={`absolute inset-0 ${theme.heroBg}`} />
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[radial-gradient(circle_at_70%_100%,rgba(255,60,0,.26),transparent_40%)]" />
           <motion.div animate={{ opacity: [0.25, 0.65, 0.25], scale: [1, 1.06, 1] }} transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }} className="absolute right-16 top-24 h-[600px] w-[600px] rounded-full bg-orange-600/20 blur-3xl" />
@@ -222,7 +201,7 @@ return (
         </section>
 <motion.section
   id="dashboard"
-  className="mt-12"
+  className="mt-10"
   ref={dashboardRef}
 initial={{
   opacity: 0,
@@ -301,71 +280,6 @@ transition={{
         ))}
       </div>
     </div>
-  </div>
-</motion.section>
-
-<motion.section
-  id="leaderboards"
-  className="mt-12"
-  variants={revealUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.22 }}
->
-  <div className="mb-6 flex items-end justify-between">
-    <div>
-      <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
-        Competitive Rankings
-      </div>
-
-      <h2 className="mt-2 text-4xl font-black">
-        Leaderboards
-      </h2>
-    </div>
-
-    <div className={`hidden rounded-2xl border px-5 py-3 text-sm font-bold backdrop-blur-xl md:block ${theme.panel}`}>
-      Season 6 Rankings
-    </div>
-  </div>
-
-  <div className="grid gap-5 lg:grid-cols-3">
-    {[
-      ['Top Player', 'RagnarX', 'Level 97', Trophy],
-      ['Top Clan', 'Phoenix Order', '18 Members', Crown],
-      ['Richest Player', 'GoldWolf', '248K Scrap', ShoppingBag],
-      ['Most Active', 'NightHunter', '126h Played', Activity],
-      ['Raid Champion', 'IronFang', '42 Raids Won', Shield],
-      ['Boss Slayer', 'AshBlade', '31 Boss Kills', Skull],
-    ].map(([title, name, stat, Icon]: any) => (
-      <motion.div
-        key={title}
-        whileHover={{ y: -8, scale: 1.01 }}
-        transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-        className={`neon-border group relative overflow-hidden rounded-[2rem] border p-6 backdrop-blur-2xl ${theme.panel}`}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-violet-500/10 opacity-0 transition group-hover:opacity-100" />
-
-        <div className="relative flex items-start justify-between gap-4">
-          <div>
-            <div className="text-xs font-black uppercase tracking-[.25em] text-orange-500">
-              {title}
-            </div>
-
-            <h3 className="mt-4 text-3xl font-black">
-              {name}
-            </h3>
-
-            <div className={`mt-3 text-lg font-bold ${theme.muted}`}>
-              {stat}
-            </div>
-          </div>
-
-          <div className="rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 p-4 text-white shadow-[0_0_36px_rgba(255,86,18,.32)]">
-            <Icon className="h-7 w-7" />
-          </div>
-        </div>
-      </motion.div>
-    ))}
   </div>
 </motion.section>
 
@@ -598,7 +512,6 @@ transition={{
 )}
 
 <motion.section
-  id="features"
   className="py-10"
   initial={{
     opacity: 0,
@@ -618,7 +531,7 @@ transition={{
     ease: 'easeOut',
   }}
 >
-  <div className="mb-10">
+  <div className="mb-6">
     <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
       Speranza Systems
     </div>
