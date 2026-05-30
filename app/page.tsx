@@ -86,7 +86,7 @@ return (
   { label: 'Dashboard', id: 'dashboard' },
   { label: 'Store', id: 'store' },
   { label: 'Seasons', id: 'features' },
-  { label: 'Leaderboards', id: 'dashboard' },
+  { label: 'Leaderboards', id: 'leaderboards' },
   { label: 'Discord', id: 'discord' },
 ].map((item) => (
     <button
@@ -299,6 +299,71 @@ transition={{
         ))}
       </div>
     </div>
+  </div>
+</motion.section>
+
+<motion.section
+  id="leaderboards"
+  className="mt-12"
+  variants={revealUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.22 }}
+>
+  <div className="mb-6 flex items-end justify-between">
+    <div>
+      <div className="text-sm font-black uppercase tracking-[.35em] text-orange-500">
+        Competitive Rankings
+      </div>
+
+      <h2 className="mt-2 text-4xl font-black">
+        Leaderboards
+      </h2>
+    </div>
+
+    <div className={`hidden rounded-2xl border px-5 py-3 text-sm font-bold backdrop-blur-xl md:block ${theme.panel}`}>
+      Season 6 Rankings
+    </div>
+  </div>
+
+  <div className="grid gap-5 lg:grid-cols-3">
+    {[
+      ['Top Player', 'RagnarX', 'Level 97', Trophy],
+      ['Top Clan', 'Phoenix Order', '18 Members', Crown],
+      ['Richest Player', 'GoldWolf', '248K Scrap', ShoppingBag],
+      ['Most Active', 'NightHunter', '126h Played', Activity],
+      ['Raid Champion', 'IronFang', '42 Raids Won', Shield],
+      ['Boss Slayer', 'AshBlade', '31 Boss Kills', Skull],
+    ].map(([title, name, stat, Icon]: any) => (
+      <motion.div
+        key={title}
+        whileHover={{ y: -8, scale: 1.01 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+        className={`neon-border group relative overflow-hidden rounded-[2rem] border p-6 backdrop-blur-2xl ${theme.panel}`}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-violet-500/10 opacity-0 transition group-hover:opacity-100" />
+
+        <div className="relative flex items-start justify-between gap-4">
+          <div>
+            <div className="text-xs font-black uppercase tracking-[.25em] text-orange-500">
+              {title}
+            </div>
+
+            <h3 className="mt-4 text-3xl font-black">
+              {name}
+            </h3>
+
+            <div className={`mt-3 text-lg font-bold ${theme.muted}`}>
+              {stat}
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 p-4 text-white shadow-[0_0_36px_rgba(255,86,18,.32)]">
+            <Icon className="h-7 w-7" />
+          </div>
+        </div>
+      </motion.div>
+    ))}
   </div>
 </motion.section>
 
