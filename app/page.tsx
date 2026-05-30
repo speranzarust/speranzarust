@@ -524,7 +524,6 @@ transition={{
   className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/15 to-white/5 px-5 py-4 font-black text-white/80 shadow-[0_10px_30px_rgba(255,255,255,.06)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/15"
 >
   Cancel
-</button>
             </button>
           </div>
         </div>
