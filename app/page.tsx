@@ -97,12 +97,14 @@ return (
   const section = document.getElementById(item.id)
 
   if (section) {
-    const yOffset = -105
+    const navbarHeight = 105
+    const extraGap = 28
 
     const y =
       section.getBoundingClientRect().top +
-      window.scrollY +
-      yOffset
+      window.scrollY -
+      navbarHeight -
+      extraGap
 
     window.scrollTo({
       top: y,
