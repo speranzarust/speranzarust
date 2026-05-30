@@ -98,7 +98,7 @@ return (
 
   if (section) {
     const navbarHeight = 105
-    const extraGap = 50
+    const extraGap = 28
 
     const y =
       section.getBoundingClientRect().top +
