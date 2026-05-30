@@ -37,7 +37,7 @@ const revealUp: any = {
 };
 export default function Home() {
   const [selectedPackage, setSelectedPackage] = useState<any>(null)
-
+  const [activeSection, setActiveSection] = useState('home')
   const dashboardRef = useRef(null)
   const dashboardInView = useInView(dashboardRef, {
     amount: 0.35,
@@ -68,7 +68,7 @@ return (
       <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
     </div>
 
-      <div className="relative mx-auto max-w-[1580px] px-5 pt-32 lg:px-8">
+      <div className="relative mx-auto max-w-[1580px] px-5 pt-40 lg:px-8">
         <nav className={`fixed left-1/2 top-5 z-50 flex w-[calc(100%-40px)] max-w-[1580px] -translate-x-1/2 items-center justify-between rounded-[2rem] border px-5 py-4 backdrop-blur-2xl ${theme.panel}`}>
           <div className="flex items-center gap-3">
             <div className="relative grid h-16 w-16 place-items-center overflow-hidden rounded-2xl bg-transparent shadow-[0_0_35px_rgba(255,76,16,.35)]">
@@ -91,18 +91,20 @@ return (
 ].map((item) => (
     <button
   key={item.label}
-  onClick={() => {
-    const section = document.getElementById(item.id)
+ onClick={() => {
+  setActiveSection(item.id)
 
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
-    }
-  }}
+  const section = document.getElementById(item.id)
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+}}
       className={`neon-border neon-border-sm group relative overflow-hidden rounded-2xl border px-4 py-3 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 ${
-        item.label === 'Home'
+        activeSection === item.id
   ? 'border-orange-400/30 bg-orange-500/10 text-orange-500 shadow-[0_0_28px_rgba(255,120,40,.16)]'
   : 'border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.14)_0%,rgba(255,255,255,.04)_100%)] text-white/80 shadow-[inset_0_1px_1px_rgba(255,255,255,.14),0_12px_35px_rgba(0,0,0,.28)] hover:border-orange-400/30 hover:text-orange-400 hover:shadow-[0_18px_45px_rgba(255,120,40,.16),inset_0_1px_2px_rgba(255,255,255,.18)]'
       }`}
