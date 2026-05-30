@@ -97,14 +97,17 @@ return (
   const section = document.getElementById(item.id)
 
   if (section) {
-   const yOffset = -150
-const y =
-  section.getBoundingClientRect().top + window.scrollY + yOffset
+    const yOffset = -105
 
-window.scrollTo({
-  top: y,
-  behavior: 'smooth',
-})
+    const y =
+      section.getBoundingClientRect().top +
+      window.scrollY +
+      yOffset
+
+    window.scrollTo({
+      top: y,
+      behavior: 'smooth',
+    })
   }
 }}
       className={`neon-border neon-border-sm group relative overflow-hidden rounded-2xl border px-4 py-3 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 ${
