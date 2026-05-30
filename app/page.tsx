@@ -464,11 +464,11 @@ transition={{
       />
 
       <button
-        onClick={() => setSelectedPackage(null)}
-        className="absolute right-6 top-6 z-10 rounded-2xl border border-white/10 bg-white/10 px-4 py-2 text-xl font-black text-white backdrop-blur-xl transition hover:bg-white/20"
-      >
-        ×
-      </button>
+  onClick={() => setSelectedPackage(null)}
+  className="absolute right-6 top-6 z-10 rounded-2xl border border-red-500/30 bg-red-500/20 px-4 py-2 text-xl font-black text-red-300 shadow-[0_0_25px_rgba(255,40,40,.25)] backdrop-blur-xl transition hover:scale-105 hover:bg-red-500/30"
+>
+  ×
+</button>
 
       <div className="relative grid gap-8 md:grid-cols-[1fr_.8fr]">
         <div>
@@ -515,15 +515,16 @@ transition={{
           </div>
 
           <div className="mt-8 grid gap-3">
-            <button className="neon-border rounded-2xl border border-orange-500/40 bg-orange-500/20 px-5 py-4 font-black text-orange-400 shadow-[0_0_35px_rgba(255,100,30,.22)] transition hover:-translate-y-1">
-              Continue Purchase
-            </button>
+            <button className="neon-border rounded-2xl border border-orange-500/40 bg-gradient-to-b from-orange-500/30 to-orange-600/10 px-5 py-4 font-black text-orange-300 shadow-[0_10px_35px_rgba(255,100,30,.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-orange-400 hover:bg-orange-500/25">
+  Continue Purchase
+</button>
 
             <button
-              onClick={() => setSelectedPackage(null)}
-              className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-black text-white/75 transition hover:bg-white/15"
-            >
-              Cancel
+  onClick={() => setSelectedPackage(null)}
+  className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/15 to-white/5 px-5 py-4 font-black text-white/80 shadow-[0_10px_30px_rgba(255,255,255,.06)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/15"
+>
+  Cancel
+</button>
             </button>
           </div>
         </div>
