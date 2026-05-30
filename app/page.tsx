@@ -69,7 +69,7 @@ return (
     </div>
 
       <div className="relative mx-auto max-w-[1580px] px-5 pt-40 lg:px-8">
-        <nav className={`fixed left-1/2 top-5 z-50 flex w-[calc(100%-40px)] max-w-[1580px] -translate-x-1/2 items-center justify-between rounded-[2rem] border px-5 py-4 backdrop-blur-2xl ${theme.panel}`}>
+        <nav className={`fixed left-1/2 top-5 z-50 flex w-[calc(100%-40px)] max-w-[1580px] -translate-x-1/2 items-center justify-between rounded-[8rem] border px-5 py-4 backdrop-blur-2xl ${theme.panel}`}>
           <div className="flex items-center gap-3">
             <div className="relative grid h-16 w-16 place-items-center overflow-hidden rounded-2xl bg-transparent shadow-[0_0_35px_rgba(255,76,16,.35)]">
               <Image src="/phoenix-v2.png" alt="Speranza Phoenix" fill className="object-contain p-1 drop-shadow-[0_0_18px_rgba(255,91,18,.85)]" priority />
